@@ -7,9 +7,16 @@ inputTwo.addEventListener("keyup", second);
 function first() {
   localStorage.setItem("first", inputOne.value);
   localStorage.getItem("first");
+  a = localStorage.getItem("first");
 }
 
 function second() {
   localStorage.setItem("second", inputTwo.value);
   localStorage.getItem("second");
+  b = localStorage.getItem("second");
 }
+
+window.onload = function ready() {
+  inputOne.value = localStorage.getItem("first");
+  inputTwo.value = localStorage.getItem("second");
+};
