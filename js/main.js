@@ -14,14 +14,14 @@ inputTwo.addEventListener("keyup", () => {
   localStorage.setItem("b", secondInput.value);
 });
 
-onlyForm.onsubmit = (e) => {
+onlyForm.addEventListener("onsubmit", (e) => {
   e.preventDefault();
   if (inputOne.value === "Михаил" && inputTwo.value === "Юркевич") {
     anotherForm.style.display = "block";
   } else {
     anotherForm.style.display = "none";
   }
-};
+});
 
 window.addEventListener("onload", () => {
   inputOne.value = localStorage.getItem("a");
