@@ -1,22 +1,21 @@
 let inputOne = document.querySelector(".inputOne");
 let inputTwo = document.querySelector(".inputTwo");
 
-inputOne.addEventListener("keyup", first);
-inputTwo.addEventListener("keyup", second);
+inputOne.addEventListener("keyup", listenerFunction);
+inputTwo.addEventListener("keyup", listenerFunction);
 
-function first() {
-  localStorage.setItem("first", inputOne.value);
-  localStorage.getItem("first");
-  a = localStorage.getItem("first");
+let onlyForm = document.forms.onlyForm;
+let firstInput = onlyForm.elements.first;
+let secondInput = onlyForm.elements.second;
+
+function listenerFunction() {
+  localStorage.setItem("a", firstInput.value);
+  localStorage.setItem("b", secondInput.value);
 }
 
-function second() {
-  localStorage.setItem("second", inputTwo.value);
-  localStorage.getItem("second");
-  b = localStorage.getItem("second");
-}
+// =========================================
 
-window.onload = function ready() {
-  inputOne.value = localStorage.getItem("first");
-  inputTwo.value = localStorage.getItem("second");
+window.onload = function () {
+  inputOne.value = localStorage.getItem("a");
+  inputTwo.value = localStorage.getItem("b");
 };
