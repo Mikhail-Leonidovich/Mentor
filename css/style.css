@@ -10,3 +10,7 @@ label {
   width: 100px;
   height: 20px;
 }
+
+.second-form {
+  display: none;
+}
