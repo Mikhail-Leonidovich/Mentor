@@ -2,16 +2,14 @@ let inputOne = document.querySelector(".inputOne");
 let inputTwo = document.querySelector(".inputTwo");
 let button = document.querySelector(".btn-1");
 
-let onlyForm = document.forms.onlyForm;
-let firstInput = onlyForm.elements.first;
-let secondInput = onlyForm.elements.second;
-let anotherForm = document.forms.anotherForm;
+let onlyForm = document.querySelector(".only-form");
+let anotherForm = document.querySelector(".second-form");
 
 inputOne.addEventListener("keyup", () => {
-  localStorage.setItem("a", firstInput.value);
+  localStorage.setItem("a", inputOne.value);
 });
 inputTwo.addEventListener("keyup", () => {
-  localStorage.setItem("b", secondInput.value);
+  localStorage.setItem("b", inputTwo.value);
 });
 
 onlyForm.addEventListener("onsubmit", (e) => {
@@ -23,7 +21,8 @@ onlyForm.addEventListener("onsubmit", (e) => {
   }
 });
 
-window.addEventListener("onload", () => {
+// need to fix
+window.onload = () => {
   inputOne.value = localStorage.getItem("a");
   inputTwo.value = localStorage.getItem("b");
-});
+};
