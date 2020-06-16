@@ -1,16 +1,15 @@
 body {
   padding: 0;
   margin: 0;
-  position: relative;
   color: #000000;
 }
 
-label {
-  position: absolute;
-  width: 100px;
-  height: 20px;
+.buttonOne {
+  display: block;
+  margin: 0 auto;
 }
 
-.second-form {
-  display: none;
+.buttonTwo {
+  display: block;
+  margin: 0 auto;
 }
