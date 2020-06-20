@@ -1,19 +1,12 @@
-// let btnNameOne = document.querySelector(".buttonOne");
-// let btnNameTwo = document.querySelector(".buttonTwo");
+let inputIn = document.querySelector(".inputIn");
 
-// function onOperationButtonClick(eventObject) {
-//   let clickElement = eventObject.currentTarget;
-//   let btnName = clickElement.name;
-//   console.log(btnName);
-// }
+inputIn.addEventListener("keyup", onOperationButtonClick);
 
-// btnNameOne.addEventListener("click", onOperationButtonClick);
-// btnNameTwo.addEventListener("click", onOperationButtonClick);
-
-
-
-document.querySelector(".buttonOne").onclick = (event) => {
-  console.log(event.target.name);
-};
-
-// Это простой способ, а сверху немного усложненный, с выбором из двух кнопок.
+function onOperationButtonClick(eventObject) {
+  let clickElementName = eventObject.currentTarget.name;
+  if (clickElementName !== "") {
+    localStorage.setItem("a", inputIn.value);
+  } else {
+    console.log("Вы не ввели значение");
+  }
+}
