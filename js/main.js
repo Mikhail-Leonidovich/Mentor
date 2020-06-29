@@ -1,12 +1,21 @@
-let inputIn = document.querySelector(".inputIn");
+let inputInOne = document.querySelector(".inputInOne");
+let inputInTwo = document.querySelector(".inputInTwo");
+let inputInThree = document.querySelector(".inputInThree");
 
-inputIn.addEventListener("keyup", onOperationButtonClick);
+inputInOne.addEventListener("keyup", onOperationButtonClick);
+inputInTwo.addEventListener("keyup", onOperationButtonClick);
+inputInThree.addEventListener("keyup", onOperationButtonClick);
 
 function onOperationButtonClick(eventObject) {
   let clickElementName = eventObject.currentTarget.name;
-  if (clickElementName !== "") {
-    localStorage.setItem("a", inputIn.value);
+  if (
+    clickElementName == "inputDataOne" ||
+    clickElementName == "inputDataTwo" ||
+    clickElementName == "inputDataThree"
+  ) {
+    localStorage.setItem("a", clickElementName);
   } else {
     console.log("Вы не ввели значение");
   }
 }
+localStorage.removeItem("a");

@@ -3,3 +3,7 @@ body {
   margin: 0;
   color: #000000;
 }
+.mod{
+  display: block;
+  margin: 20px auto;
+}
