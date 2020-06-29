@@ -8,14 +8,15 @@ inputInThree.addEventListener("keyup", onOperationButtonClick);
 
 function onOperationButtonClick(eventObject) {
   let clickElementName = eventObject.currentTarget.name;
-  if (
-    clickElementName == "inputDataOne" ||
-    clickElementName == "inputDataTwo" ||
-    clickElementName == "inputDataThree"
-  ) {
+  if (clickElementName == "inputDataOne") {
     localStorage.setItem("a", clickElementName);
-  } else {
-    console.log("Вы не ввели значение");
+  } else if (clickElementName == "inputDataTwo") {
+    localStorage.setItem("b", clickElementName);
+  } else if (clickElementName == "inputDataThree") {
+    localStorage.setItem("c", clickElementName);
   }
 }
+
 localStorage.removeItem("a");
+localStorage.removeItem("b");
+localStorage.removeItem("c");
