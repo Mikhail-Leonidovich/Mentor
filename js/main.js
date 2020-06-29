@@ -7,19 +7,13 @@ inputInTwo.addEventListener("keyup", onOperationButtonClick);
 inputInThree.addEventListener("keyup", onOperationButtonClick);
 
 function onOperationButtonClick(eventObject) {
-  // eventObject.preventDefault();
   let clickElementName = eventObject.currentTarget.name;
-  if (clickElementName == "inputDataOne") {
-    localStorage.setItem("a", clickElementName);
-  } else if (clickElementName == "inputDataTwo") {
-    localStorage.setItem("b", clickElementName);
-  } else if (clickElementName == "inputDataThree") {
-    localStorage.setItem("c", clickElementName);
-  }
+  let clickElementValue = eventObject.currentTarget.value;
+  localStorage.setItem(clickElementName, clickElementValue);
 }
 
-window.addEventListener("onload", () => {
-  inputInOne.value = localStorage.getItem("a");
-  inputInTwo.value = localStorage.getItem("b");
-  inputInThree.value = localStorage.getItem("c");
-});
+window.onload = () => {
+  inputInOne.value = localStorage.getItem("inputDataOne");
+  inputInTwo.value = localStorage.getItem("inputDataTwo");
+  inputInThree.value = localStorage.getItem("inputDataThree");
+};
