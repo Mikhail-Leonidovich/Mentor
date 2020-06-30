@@ -12,10 +12,10 @@ function onOperationButtonClick(eventObject) {
   localStorage.setItem(clickElementName, clickElementValue);
 }
 
-window.onload = () => {
+window.addEventListener("load", () => {
   let elements = document.querySelectorAll("input");
   for (let elem of elements) {
     let a = localStorage.getItem(elem.name);
     elem.value = a;
   }
-};
+});
