@@ -13,7 +13,9 @@ function onOperationButtonClick(eventObject) {
 }
 
 window.onload = () => {
-  inputInOne.value = localStorage.getItem("inputDataOne");
-  inputInTwo.value = localStorage.getItem("inputDataTwo");
-  inputInThree.value = localStorage.getItem("inputDataThree");
+  let elements = document.querySelectorAll("input");
+  for (let elem of elements) {
+    let a = localStorage.getItem(elem.name);
+    elem.value = a;
+  }
 };
