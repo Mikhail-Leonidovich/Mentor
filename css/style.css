@@ -18,8 +18,5 @@ form {
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  visibility: hidden;
+  display: block;
 }

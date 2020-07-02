@@ -26,14 +26,17 @@ form.addEventListener("submit", (e) => {
   vision.style.visibility = "visible";
   e.preventDefault();
 
-  let elementsInp = document.querySelectorAll("input");
-  let elementsLab = document.querySelectorAll("label");
+  let elementsInp = document.querySelectorAll(".form > input");
+  let elementsContInp = document.querySelectorAll(".content > p > input");
+  let elementsContLab = document.querySelectorAll(".content > p > label");
   let i = 0;
 
   for (let elemInp of elementsInp) {
     let a = localStorage.getItem(elemInp.name);
-    for (; i < elementsLab.length; ) {
-      elementsLab[i].innerHTML = a;
+    let b = localStorage.getItem(elemInp);
+    for (; i < elementsContInp.length; ) {
+      elementsContInp[i].value = a;
+      elementsContLab[i].innerHTML = elemInp.name;
       break;
     }
     i++;
