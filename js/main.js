@@ -22,23 +22,38 @@ window.addEventListener("load", () => {
 });
 
 form.addEventListener("submit", (e) => {
-  let vision = document.querySelector(".content");
-  vision.style.visibility = "visible";
-  e.preventDefault();
+  let date = document.querySelectorAll(".form > input");
+  let text = document.getElementById("text");
 
-  let elementsInp = document.querySelectorAll(".form > input");
-  let elementsContInp = document.querySelectorAll(".content > p > input");
-  let elementsContLab = document.querySelectorAll(".content > p > label");
-  let i = 0;
-
-  for (let elemInp of elementsInp) {
-    let a = localStorage.getItem(elemInp.name);
-    let b = localStorage.getItem(elemInp);
-    for (; i < elementsContInp.length; ) {
-      elementsContInp[i].value = a;
-      elementsContLab[i].innerHTML = elemInp.name;
-      break;
-    }
-    i++;
+  for (elem of date) {
+    let p = document.createElement("p");
+    let a = document.createTextNode(elem.name + ": ");
+    let b = document.createTextNode(elem.value);
+    text.appendChild(p);
+    p.appendChild(a);
+    p.appendChild(b);
   }
+  e.preventDefault();
 });
+
+// form.addEventListener("submit", (e) => {
+//   let vision = document.querySelector(".content");
+//   vision.style.visibility = "visible";
+//   e.preventDefault();
+
+// let elementsInp = document.querySelectorAll(".form > input");
+// let elementsContInp = document.querySelectorAll(".content > p > input");
+// let elementsContLab = document.querySelectorAll(".content > p > label");
+// let i = 0;
+
+// for (let elemInp of elementsInp) {
+//   let a = localStorage.getItem(elemInp.name);
+//   let b = localStorage.getItem(elemInp);
+//   for (; i < elementsContInp.length; ) {
+//     elementsContInp[i].value = a;
+//     elementsContLab[i].innerHTML = elemInp.name;
+//     break;
+//   }
+//   i++;
+// }
+// });
