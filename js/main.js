@@ -17,16 +17,12 @@ window.addEventListener("load", () => {
   let elements = document.querySelectorAll("input");
   for (let elem of elements) {
     let a = Number(localStorage.getItem(elem.name));
-
-    let date = new Date();
-    let minutes = Number(date.getMinutes());
-    elem.value = a + minutes;
-  }
-  for (let elem of elements) {
-    let b = Number(localStorage.getItem(elem.name));
-
-    let newSum = b + Number(elem.value);
-    b = localStorage.setItem(elem.name, newSum);
+    if (a != "") {
+      let date = new Date();
+      let minutes = Number(date.getMinutes());
+      elem.value = a + minutes;
+      a = localStorage.setItem(elem.name, elem.value);
+    } else continue;
   }
 });
 
