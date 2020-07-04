@@ -3,6 +3,7 @@ let inputInTwo = document.querySelector(".inputInTwo");
 let inputInThree = document.querySelector(".inputInThree");
 let form = document.querySelector(".form");
 let btn = document.querySelector(".button-1");
+let btnDisplay = document.querySelector(".button-2");
 
 inputInOne.addEventListener("keyup", onOperationButtonClick);
 inputInTwo.addEventListener("keyup", onOperationButtonClick);
@@ -47,4 +48,8 @@ btn.addEventListener("click", () => {
   for (elem of elements) {
     localStorage.removeItem(elem.name);
   }
+});
+
+btnDisplay.addEventListener("click", () => {
+  form.classList.toggle("form-mod");
 });

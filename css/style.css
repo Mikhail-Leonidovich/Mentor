@@ -26,7 +26,12 @@ p {
   text-align: center;
 }
 
-.button-1 {
+.button-1,
+.button-2 {
   display: block;
   margin: 20px auto;
+}
+
+.form-mod {
+  display: none;
 }
