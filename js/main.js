@@ -2,6 +2,7 @@ let inputInOne = document.querySelector(".inputInOne");
 let inputInTwo = document.querySelector(".inputInTwo");
 let inputInThree = document.querySelector(".inputInThree");
 let form = document.querySelector(".form");
+let btn = document.querySelector(".button-1");
 
 inputInOne.addEventListener("keyup", onOperationButtonClick);
 inputInTwo.addEventListener("keyup", onOperationButtonClick);
@@ -41,24 +42,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-// form.addEventListener("submit", (e) => {
-//   let vision = document.querySelector(".content");
-//   vision.style.visibility = "visible";
-//   e.preventDefault();
-
-// let elementsInp = document.querySelectorAll(".form > input");
-// let elementsContInp = document.querySelectorAll(".content > p > input");
-// let elementsContLab = document.querySelectorAll(".content > p > label");
-// let i = 0;
-
-// for (let elemInp of elementsInp) {
-//   let a = localStorage.getItem(elemInp.name);
-//   let b = localStorage.getItem(elemInp);
-//   for (; i < elementsContInp.length; ) {
-//     elementsContInp[i].value = a;
-//     elementsContLab[i].innerHTML = elemInp.name;
-//     break;
-//   }
-//   i++;
-// }
-// });
+btn.addEventListener("click", () => {
+  let elements = document.querySelectorAll("input");
+  for (elem of elements) {
+    localStorage.removeItem(elem.name);
+  }
+});
