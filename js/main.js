@@ -53,3 +53,5 @@ btn.addEventListener("click", () => {
 btnDisplay.addEventListener("click", () => {
   form.classList.toggle("form-mod");
 });
+
+

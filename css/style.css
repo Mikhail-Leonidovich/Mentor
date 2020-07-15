@@ -7,7 +7,7 @@ body {
   margin: 10px auto;
 }
 
-.button {
+button {
   display: block;
   margin: 20px auto;
 }
@@ -24,12 +24,6 @@ form {
 
 p {
   text-align: center;
-}
-
-.button-1,
-.button-2 {
-  display: block;
-  margin: 20px auto;
 }
 
 .form-mod {
