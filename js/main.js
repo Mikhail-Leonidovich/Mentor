@@ -54,4 +54,37 @@ btnDisplay.addEventListener("click", () => {
   form.classList.toggle("form-mod");
 });
 
+/* ==============
+      AJAX 
+================ */
 
+let textResponse = document.querySelector("#response");
+let btnResponse = document.querySelector("button[name=btnResponse]");
+const requestUrl = "http://example.loc/test.json";
+const xhr = new XMLHttpRequest();
+let ajaxList = document.querySelector(".ajax-list");
+
+function funcGetXhrResponse() {
+  xhr.open("GET", requestUrl);
+  xhr.responseType = "json";
+  xhr.onload = () => {
+    let arrayOfXhr = xhr.response;
+
+    arrayOfXhr.forEach(function (item, i, arrayOfXhr) {
+      let xhrObj = arrayOfXhr[i];
+      let ajaxListElem = document.createElement("li");
+      ajaxList.append(ajaxListElem);
+      ajaxListElem.innerHTML = xhrObj.title;
+    });
+  };
+  xhr.send();
+}
+
+btnResponse.addEventListener("click", (e) => {
+  e.preventDefault();
+  funcGetXhrResponse();
+});
+
+/* ==============
+    AJAX - END
+================ */
