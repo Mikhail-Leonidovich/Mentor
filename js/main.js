@@ -1,9 +1,9 @@
-let inputInOne = document.querySelector(".inputInOne");
-let inputInTwo = document.querySelector(".inputInTwo");
-let inputInThree = document.querySelector(".inputInThree");
-let form = document.querySelector(".form");
-let btn = document.querySelector(".button-1");
-let btnDisplay = document.querySelector(".button-2");
+const inputInOne = document.querySelector(".inputInOne");
+const inputInTwo = document.querySelector(".inputInTwo");
+const inputInThree = document.querySelector(".inputInThree");
+const form = document.querySelector(".form");
+const btn = document.querySelector(".button-1");
+const btnDisplay = document.querySelector(".button-2");
 
 inputInOne.addEventListener("keyup", onOperationButtonClick);
 inputInTwo.addEventListener("keyup", onOperationButtonClick);
@@ -47,6 +47,7 @@ btn.addEventListener("click", () => {
   let elements = document.querySelectorAll("input");
   for (elem of elements) {
     localStorage.removeItem(elem.name);
+    elem.value = "";
   }
 });
 
