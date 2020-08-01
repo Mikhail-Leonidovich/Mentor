@@ -58,31 +58,28 @@ btnDisplay.addEventListener("click", () => {
       AJAX 
 ================ */
 
-let textResponse = document.querySelector("#response");
-let btnResponse = document.querySelector("button[name=btnResponse]");
-const requestUrl = "http://example.loc/test.json";
-const xhr = new XMLHttpRequest();
-let ajaxList = document.querySelector(".ajax-list");
+const btnResponse = document.querySelector("button[name=btnResponse]");
+const ajaxList = document.querySelector(".ajax-list");
+const responseUrl = "http://example.loc/test.json";
+let content = null;
 
-function funcGetXhrResponse() {
-  xhr.open("GET", requestUrl);
-  xhr.responseType = "json";
-  xhr.onload = () => {
-    let arrayOfXhr = xhr.response;
+async function getAjaxResponse() {
+  let response = await fetch(responseUrl);
+  content = await response.json();
 
-    arrayOfXhr.forEach(function (item, i, arrayOfXhr) {
-      let xhrObj = arrayOfXhr[i];
+  function getFromArray(content) {
+    content.forEach(function (item, i, content) {
+      let contentObj = item;
       let ajaxListElem = document.createElement("li");
       ajaxList.append(ajaxListElem);
-      ajaxListElem.innerHTML = xhrObj.title;
+      ajaxListElem.innerHTML = contentObj.title;
     });
-  };
-  xhr.send();
+  }
+  getFromArray(content);
 }
 
-btnResponse.addEventListener("click", (e) => {
-  e.preventDefault();
-  funcGetXhrResponse();
+btnResponse.addEventListener("click", () => {
+  getAjaxResponse();
 });
 
 /* ==============
